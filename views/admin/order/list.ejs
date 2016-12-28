@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title>	ADMIN - ORDER LIST </title>
+</head>
+<body>
+	<h1> ORDER LIST </h1>
+	<a href="/admin/order/insert"> INSERT DATA </a>
+	<hr>
+	<table width="100%" border="1">
+		<tr>
+			<th>DEL/EDIT</th>
+			<th>ID</th>
+			<th>DATE</th>
+			<th>NAME</th>
+			<th>PHONE</th>
+			<th>REGULAR</th>
+			<th>DAY</th>
+			<th>EGG_NUM</th>
+			<th>EGG_SET</th>
+			<th>PRICE</th>
+			<th>PLACE</th>
+			<th>DEPOSIT</th>
+			<th>DELIVER</th>
+		</tr>
+		<tr>
+		<% data.forEach(function (item, index) { %>
+		<tr>
+			<td><a href="/admin/order/edit/<%= item.id %>"> DEL/EDIT </td>
+			<td><%= item.id %></td>
+			<td><%= item.date.toString() %></td>
+			<td><%= item.name %></td>
+			<td><%= item.phone %></td>
+			<td><%= item.regular %></td>
+			<td><%= item.day %></td>
+			<td><%= item.eggNum %></td>
+			<td><%= item.eggSet %></td>
+			<td><%= item.price %></td>
+			<td><%= item.place %></td>
+			<td><a href="/admin/order/deposit_update/<%= item.id %>"> <%= item.deposit %> </td>
+			<td><a href="/admin/order/deliver_update/<%= item.id %>"> <%= item.deliver %> </td>
+		</tr>
+		<% }); %>
+	</table>
+</body>
+</html>
+</body>
+</html>

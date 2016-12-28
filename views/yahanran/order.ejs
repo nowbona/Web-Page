@@ -1,0 +1,45 @@
+<% layout('layout') -%>
+
+<div class="main-body orderpage-body">
+	<center>
+		<div class="container ordermessage">
+			<small class="ordermessage">야한란을 이용해 주셔서 감사합니다<br></small>
+			주문이 접수되었습니다!
+		</div>
+		<div class="ordermessage2">
+			입금예정일 오후5시까지 입금이 되지 않을 때에는<br class="pc-invisible">주문이 자동취소 되니 유의해주세요
+		</div>
+		<div class="container ordermessage3">
+			<table id="orderpage-table" style="border:none">
+				<tr>
+					<th>상품명 :</th>
+					<td> 구운계란 <%= eggSet %>set</td>
+				</tr>
+				<tr>
+					<th>입금하실 금액 :</th>
+					<td style="font-weight:bold"> <%= price %>원 </td>
+				</tr>
+				<tr>
+					<th>입금은행 :</th>
+					<td> 경남은행</td>
+				</tr>
+				<tr>
+					<th>입금계좌 :</th>
+					<td style="font-weight:bold"> 04300930 <small>예금주 : 보나(조은호)</small></td>
+				</tr>
+				<tr>
+					<th>입금예정일 :</th>
+					<td> 2016년 11월 30일 수요일</td>
+				</tr>
+			</table>
+			<div id="toss-message">
+				<img src="/images/toss.png" alt="">토스도 가능합니다. 010 5007 4305 조은호
+			</div>
+		</div>
+	</center>
+	<!-- <center style="margin-top:30px">
+		<a href="/myorder">
+			<button type="button" class="btn btn-default" style="center">주문내역 확인하기</button>
+		</a>
+	</center> -->
+</div>

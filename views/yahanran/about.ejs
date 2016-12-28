@@ -1,0 +1,174 @@
+<% layout('layout') -%>
+
+<div class="container main-body">
+		<div class="col-md-6 col-sm-12" style="margin-top: 20px">
+			<img class="img-responsive" src="/images/about.png" alt="">
+		</div>
+		<form action="/yahanran/order" method="POST">
+			<!-- 모바일버전 -->
+			<div class="col-sm-12 pc-invisible" style="margin-top: 20px">
+				<span style="font-size: 25px; font-weight:bold; margin-top:15px">구운계란 야한란</span><br>
+				<span style="font-size:18px">1 set - 6알</span>
+				<div style="float:right; margin-top:-15px">
+					<span style="color:red; font-size:30px; font-weight:bold">3000</span>
+					<span style="font-size:18px">원</span>
+				</div>
+			</div>
+			<div class="col-md-6 col-xs-12">
+				<!-- pc버전 -->
+				<div class="mob-invisible" style="padding-bottom: 10px; border-bottom: 2px solid #BDBDBD">
+					<h2 style="font-weight: bold">구운계란 야한란</h2>
+				</div>
+					<h6 class="mob-invisible" style="margin:15px 0 0 0">구운계란 6알</h6>
+					<span class="mob-invisible" id="price" name="price" style="color:red; font-size:24px; font-weight: bold; margin-top:0">3000원</span>
+					<h5 class="mob-invisible">배송 당일 저녁 5시 이전까지 주문과 입금을 해주신 분들께 배송됩니다</h5>
+				<table class="table" style="margin-top: 10px; margin-bottom:0">
+					<tbody>
+						<tr>
+							<th scope="row" width="20%" style="border: none; vertical-align: middle" required>이름</th>
+							<td width="80%" style="border: none; vertical-align: middle">
+								<div class="btn-group" role="group" aria-label="Basic example">
+									<input type="text" name="name" class="form-control " maxlength="25" style="width: 200px; border-radius:0px"required>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" width="20%" style="border: none; vertical-align: middle" required>연락처 <br> <small></small></th>
+							<td width="80%" style="border: none; vertical-align: middle">
+								<div class="btn-group" role="group" aria-label="Basic example">
+									<input type="tel" name="tel" class="form-control " style="width: 200px; border-radius:0px" placeholder="'-'제외 숫자만 적어주세요" maxlength="15" required>
+									<small>(주문자확인 문자발송용)</small>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" width="20%" style="border: none; vertical-align: middle">수량</th>
+							<td width="80%" style="border: none; vertical-align: middle">
+								<div class="form-group">
+									<select id="eggnumber1" class="form-control" name="eggnumber" type="integer" style="width:200px; border-radius:0px">
+										<option name="eggnumber" type="integer" value="6" selected="selected">6알 (6알 1세트)</option>
+										<option name="eggnumber" type="integer" value="12">12알 (6알 2세트)</option>
+										<option name="eggnumber" type="integer" value="18">18알 (6알 3세트)</option>
+										<option name="eggnumber" type="integer" value="24">24알 (6알 4세트)</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+						<!-- <tr>
+							<th scope="row" width="20%" style="border: none; vertical-align: middle; text-align: right">배달장소</th>
+							<td width="80%" style="border: none; vertical-align: middle">
+								<div class="btn-group " data-toggle="buttons" role="group" aria-label="...">
+									<label class="btn btn-primary" style="width: 120px"><input type="radio" name="place" value="DORM" checked="checked">기숙사<br>택배실</label>
+									<label class="btn btn-primary" style="width: 120px"><input type="radio" name="place" value="EB2">제2공학관<br>엘리베이터앞</label>
+								</div>
+							</td>
+						</tr> -->
+					</tbody>
+				</table>
+				<table class="select-del-table">
+					<tbody>
+						<tr>
+							<td style="border: none; vertical-align: middle">
+								<div class="btn-group " data-toggle="buttons" role="group" aria-label="...">
+									<label class="btn btn-default select-button" id="option3"><input type="radio" name="orderkind" id="option1" value="singular" checked="checked">따끈배송</label>
+									<label class="btn btn-default select-button" id="option4"><input type="radio" name="orderkind" id="option2" value="regular">꾸준배송</label>
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div id="dayfordelivery" class="btn-group guide" style="margin-right: 100px" data-toggle="buttons" role="group" aria-label="...">
+									<small>배송요일</small><br>
+									<label class="btn btn-default" style="width: 50px"><input type="radio" name="day" value="MON" checked="checked">월</label>
+								</div>
+								<div id="aboutsub" class="btn-group guide">
+									<small>매주 월요일 3주동안 배달됩니다</small><br>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div>
+					<hr class="mob-invisible" style="border-top: 2px solid #BDBDBD; margin:10px 0 10px 0">
+					<table class="mob-invisible">
+						<tr>
+							<td style="width:80%; padding-right:10px">
+								야한란은 저녁 7시 기숙사 택배실로 배송됩니다
+							</td>
+							<td>
+								<button type="submit" class="btn btn-order">
+									바로주문 <i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</button>
+							</td>
+						</tr>
+					</table>
+					<div class="pc-invisible" style="padding-bottom: 10px">
+						야한란은 저녁 7시 기숙사 택배실로 배송됩니다
+					</div>
+					<button type="submit" class="btn btn-order pc-invisible" style="margin-bottom:10px">
+						바로주문 <i class="fa fa-chevron-right" aria-hidden="true"></i>
+					</button>
+
+				</div>
+			</div>
+		</form>
+	<div class="row">
+		<div class="col-xs-12 mob-invisible">
+			<h2 class="page-header"><span style="margin-left: 20px">상세설명</span></h2>
+		</div>
+		<!-- <div class="col-xs-12 pc-invisible" style="margin-left: 20px; margin-bottom:5px" >
+			<span class="page-header" style="font-size:20px; font-weight:bold">상세설명<span>
+		</div> -->
+		<div class="col-xs-12 text-center">
+			<div align="center">
+				<img class="img-responsive" src="/images/web1.gif" alt="" style="width: 100%; max-width:800px">
+				<img class="img-responsive" src="/images/web2.gif" alt="" style="width: 100%; max-width:800px">
+				<img class="img-responsive" src="/images/web3.gif" alt="" style="width: 100%; max-width:800px">
+			</div>
+		</div>
+	</div>
+	<br><br>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$("#dayfordelivery").hide();
+		$("#option4").click(function(){
+				$("#dayfordelivery").hide();
+				var totalprice = (1500*$('#eggnumber1').val());
+				$('#price').empty();
+				$('#price').append(totalprice+"원");
+		});
+		$("#option3").click(function(){
+			 $("#dayfordelivery").show();
+			 var totalprice = (500*$('#eggnumber1').val());
+			 $('#price').empty();
+			 $('#price').append(totalprice+"원");
+		});
+	});
+</script>
+<script>
+	$(document).ready(function(){
+		$("#aboutsub").hide();
+		$("#option3").click(function(){
+			$("#aboutsub").hide();
+		});
+		$("#option4").click(function(){
+			$("#aboutsub").show();
+		});
+	});
+</script>
+<script type="text/javascript">
+								$(document).ready(function(){
+									$('#eggnumber1').on('click',function(e){
+										var checkedweeks = $("input[type=radio][name=orderkind]:checked").val();
+										var setprice = (500*$('#eggnumber1').val());
+										var totalprice = checkedweeks*setprice;
+										$('#price').empty();
+										$('#price').append(totalprice+"원");
+									});
+								 });
+</script>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.js"></script>

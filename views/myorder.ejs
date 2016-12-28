@@ -1,0 +1,107 @@
+<% layout('layout') -%>
+<div class="container main-body">
+  <center>
+    <!-- pc버전 -->
+    <table class="mob-invisible" id="myordertable" summary="">
+      <thead>
+        <th scope="col">주문일자</th>
+        <th scope="col">정기배송/기본배송</th>
+        <th scope="col">상품</th>
+        <th scope="col">수량</th>
+        <th scope="col">상품구매금액</th>
+        <th scope="col">배달요일</th>
+        <th scope="col">배달장소</th>
+        <th scope="col">주문처리상태</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date">
+            2016-11-21 15:00
+          </td>
+          <td class="orderkind">
+            정기배송
+          </td>
+          <td class="product">
+            야한란
+          </td>
+          <td class="quantity">
+            6알 2세트
+          </td>
+          <td>
+            18000원
+          </td>
+          <td class="day">
+            월요일
+          </td>
+          <td class="place">
+            기숙사 택배실
+          </td>
+          <td class="state">
+            결제완료 or
+          </td>
+        </tr>
+        <tr>
+          <td class="date">
+            2016-11-21 15:00
+          </td>
+          <td class="orderkind">
+            정기배송
+          </td>
+          <td class="product">
+            야한란
+          </td>
+          <td class="quantity">
+            6알 2세트
+          </td>
+          <td>
+            18000원
+          </td>
+          <td class="day">
+            월요일
+          </td>
+          <td class="place">
+            기숙사 택배실
+          </td>
+          <td class="state">
+            3주중 1주배달
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- mobile 버전 -->
+    <table class="pc-invisible" id="myordertable" summary="">
+      <thead>
+        <th class="orderkind">기본배송</th>
+        <th class="state" style="text-align:left">
+          배달완료
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="height: 50px">상품 이미지가 들어가면 좋을것 같다</td>
+          <td class="product">
+            <strong>야한란</strong> 10알 2세트<br>
+            월요일 / 기숙사택배실 <strong>10000원</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="pc-invisible" id="myordertable" summary="">
+      <thead>
+        <th class="orderkind">정기배송</th>
+        <th class="state" style="text-align:left">
+          결제완료 or 3주중 1주배달
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>상품 이미지가 들어가면 좋을것 같다</td>
+          <td class="product">
+            <strong>야한란</strong> 6알 2세트<br>
+            월요일 / 기숙사택배실 <strong>18000원</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </center>
+</div>

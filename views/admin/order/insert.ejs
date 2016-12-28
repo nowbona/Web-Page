@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<title> ADMIN - ORDER INSERT </title>
+</head>
+<body>
+	<h1> ORDER INSERT </h1>
+	<hr>
+	<form method="post">
+	<fieldset>
+		<legend> INSERT DATA </legend>
+		<table>
+            <tr>
+                <td><label> DATE </label></td>    
+				<td colspan="4"><input type="text" name="date" value="<%= time %>"/></td>
+				<td><small> <시간 입력시 형식이 바뀌지 않게 주의해주세요.> </small></td>
+            </tr>
+			<tr>
+				<td><label> NAME </label></td>
+				<td colspan="7"><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				<td><label> PHONE </label></td>
+				<td colspan="7"><input type="text" name="phone" /></td>
+			</tr>
+				<td><label> REGULAR </label></td>
+				<td colspan="2"><input type="radio" name="regular" value="Y" /> Y </td>
+				<td colspan="2"><input type="radio" name="regular" value="N" /> N </td>
+			</tr>
+			<tr>
+				<td><label> DAY </label></td>
+				<td colspan="2"><input type="radio" name="day" value="MON" /> MON </td>
+				<td colspan="2"><input type="radio" name="day" value="THU" /> THU </td>
+			</tr>
+			<tr>
+				<td><label> EGG_NUM </label></td>
+				<td colspan="2"><input type="radio" name="eggNum" value="10" /> 10 </td>
+				<td colspan="2"><input type="radio" name="eggNum" value="6" /> 6 </td>
+			</tr>
+			<tr>
+                <td><label> EGG_SET </label></td>
+                <td colspan="2"><input type="radio" name="eggSet" value="1" /> 1 </td>
+                <td colspan="2"><input type="radio" name="eggSet" value="2" /> 2 </td>
+			</tr>
+			<tr>
+                <td><label> PLACE </label></td>
+                <td colspan="2"><input type="radio" name="place" value="DORM" /> DORM </td>
+                <td colspan="2"><input type="radio" name="place" value="EB2" /> EB2 </td>
+			</tr>
+			<tr>
+                <td><label> DEPOSIT </label></td>
+	            <td colspan="2"><input type="radio" name="deposit" value="Y" /> Y </td>
+                <td colspan="2"><input type="radio" name="deposit" value="N" checked /> N </td>
+			</tr>
+			<tr>
+                <td><label> DELIVER </label></td>
+                <td colspan="2"><input type="radio" name="deliver" value="Y" /> Y </td>
+                <td colspan="2"><input type="radio" name="deliver" value="N" checked /> N </td>
+			</tr>
+		</table>
+		<input type="submit" />
+	</fieldset>
+	</form>
+</body>
+</html>

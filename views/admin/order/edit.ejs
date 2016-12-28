@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+	<title> ADMIN - ORDER EDIT </title>
+	<script type="text/javascript">
+		window.onload = function() {
+            <% if (data.regular == "Y") { %>        document.getElementById("regular_Y").checked = true;
+            <% } else if (data.regular == "N") { %> document.getElementById("regular_N").checked = true;
+            <% } %>
+
+            <% if (data.day == "MON") { %>			document.getElementById("day_mon").checked = true;
+            <% } else if (data.day == "THU") { %>	document.getElementById("day_thu").checked = true;
+            <% } %>
+
+            <% if (data.eggNum == 10) { %>			document.getElementById("eggNum_10").checked = true;
+            <% } else if (data.eggNum == 6) { %>	document.getElementById("eggNum_6").checked = true;
+            <% } %>
+
+            <% if (data.eggSet == 1) { %>			document.getElementById("eggSet_1").checked = true;
+            <% } else if (data.eggSet == 2) { %>	document.getElementById("eggSet_2").checked = true;
+            <% } %>
+
+            <% if (data.place == "DORM") { %>		document.getElementById("place_dorm").checked = true;
+            <% } else if (data.place == "EB2") { %>	document.getElementById("place_eb2").checked = true;
+            <% } %>
+
+            <% if (data.deposit == "Y") { %>		document.getElementById("deposit_Y").checked = true;
+            <% } else if (data.deposit == "N") { %>	document.getElementById("deposit_N").checked = true;
+            <% } %>
+
+            <% if (data.regular == "N") { %>        document.getElementById("deliver_N").checked = true;
+            <% } else if (data.deliver == "0") {%>  document.getElementById("deliver_0").checked = true;
+            <% } else if (data.deliver == "1") {%>  document.getElementById("deliver_1").checked = true;
+            <% } else if (data.deliver == "2") {%>  document.getElementById("deliver_2").checked = true;
+            <% } else if (data.deliver == "Y") {%>  document.getElementById("deliver_Y").checked = true;
+            <% } %>
+		};
+	</script>
+</head>
+<body>
+	<h1> ORDER DELETE/EDIT </h1>
+	<hr>
+	<form method="post">
+	<fieldset>
+		<legend> DELETE/EDIT DATA </legend>
+		<table>
+            <tr>
+                <td><label> ORDER_ID </label></td>
+                <td colspan="5"><input type="text" name="date" value="<%= data.id %>" disabled /></td>
+            </tr>
+
+            <tr>
+                <td><label> DATE </label></td>
+				<td colspan="6"><input type="text" name="date" value="<%= data.date %>" /></td>
+				<td><small> <시간 변경시 형식이 바뀌지 않게 주의해주세요.> </small></td>
+            </tr>
+			<tr>
+				<td><label> NAME </label></td>
+				<td colspan="7"><input type="text" name="name" value="<%= data.name %>" /></td>
+			</tr>
+			<tr>
+				<td><label> PHONE </label></td>
+				<td colspan="7"><input type="text" name="phone" value="<%= data.phone %>" /></td>
+			</tr>
+				<td><label> REGULAR </label></td>
+                <td colspan="2"><input type="radio" name="regular" value="Y" id="regular_Y" checked="false" /> Y </td>
+                <td colspan="2"><input type="radio" name="regular" value="N" id="regular_N" checked="false" /> N </td>
+			</tr>
+			<tr>
+				<td><label> DAY </label></td>
+				<td colspan="2"><input type="radio" name="day" value="MON" id="day_mon" checked="false" /> MON </td>
+				<td colspan="2"><input type="radio" name="day" value="THU" id="day_thu" checked="false" /> THU </td>
+			</tr>
+			<tr>
+				<td><label> EGG_NUM </label></td>
+				<td colspan="2"><input type="radio" name="eggNum" value="10" id="eggNum_10" checked="false" /> 10 </td>
+				<td colspan="2"><input type="radio" name="eggNum" value="6" id="eggNum_6" checked="false" /> 6 </td>
+			</tr>
+			<tr>
+                <td><label> EGG_SET </label></td>
+                <td colspan="2"><input type="radio" name="eggSet" value="1" id="eggSet_1" checked="false" /> 1 </td>
+                <td colspan="2"><input type="radio" name="eggSet" value="2" id="eggSet_2" checked="false" /> 2 </td>
+			</tr>
+			<tr>
+                <td><label> PLACE </label></td>
+                <td colspan="2"><input type="radio" name="place" value="DORM" id="place_dorm" checked="false" /> DORM </td>
+                <td colspan="2"><input type="radio" name="place" value="EB2" id="place_eb2" checked="false" /> EB2 </td>
+			</tr>
+			<tr>
+                <td><label> DEPOSIT </label></td>
+	            <td colspan="2"><input type="radio" name="deposit" value="Y" id="deposit_Y" checked="false" /> Y </td>
+                <td colspan="2"><input type="radio" name="deposit" value="N" id="deposit_N" checked="false" /> N </td>
+			</tr>
+			<tr>
+                <td><label> DELIVER </label></td>
+                <td><input type="radio" name="deliver" value="N" id="deliver_N" checked="false" />  N  </td>
+                <td><input type="radio" name="deliver" value="0" id="deliver_0" checked="false" />  0  </td>
+                <td><input type="radio" name="deliver" value="1" id="deliver_1" checked="false" />  1  </td>
+                <td><input type="radio" name="deliver" value="2" id="deliver_2" checked="false" />  2  </td>
+                <td><input type="radio" name="deliver" value="Y" id="deliver_Y" checked="false" />  Y  </td>
+				<td></td>
+				<td><small> <숫자는 정기배송에만 해당됩니다. 확인해주세요.> </small></td>
+			</tr>
+		</table>
+		<input type="submit" value="EDIT" />
+	</fieldset>
+	</form>
+	<br><br><br><hr>
+	<form action="/admin/order/delete/<%= data.id %>" method="post">
+		<p> CAUTION! THIS DATA IS DELETED </p>
+		<p> 
+			Before you clicked the button, plz check agian! <br>
+			<small> 클릭하기전에 한번 더 확인하세요! </small>
+		</p>
+		<input type="submit" value="DELETE!" />
+	</form>
+</body>
+</html>

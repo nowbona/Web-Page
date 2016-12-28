@@ -1,0 +1,74 @@
+<% layout('layout') -%>
+<div class="container main-body">
+	<!-- REGISTRATION FORM -->
+	<div class="text-center" style="padding-bottom:50px">
+		<div class="logo">register</div>
+		<!-- Main Form -->
+		<div class="login-form-1" style="border:5px solid #efefef;">
+			<form id="register-form" class="text-left">
+				<div class="login-form-main-message"></div>
+				<div class="main-login-form">
+					<div class="login-group">
+
+						<!-- 5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다. 이렇게 어떻게하지? -->
+						<div class="form-group">
+							<label for="reg_username" class="sr-only">Email address</label>
+							<input type="text" class="form-control" id="reg_username" name="reg_username" placeholder="ID" required>
+						</div>
+
+						<!-- 6~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요. 이것도 하는 방법알아보기 -->
+						<div class="form-group">
+							<label for="reg_password" class="sr-only">Password</label>
+							<input type="password" class="form-control" id="reg_password" name="reg_password" placeholder="비밀번호" required>
+						</div>
+
+
+						<!-- 비밀번호 똑같아야하게만들기 -->
+						<div class="form-group">
+							<label for="reg_password_confirm" class="sr-only">Password Confirm</label>
+							<input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="비밀번호 확인" required>
+						</div>
+
+						<div class="form-group">
+							<label for="reg_fullname" class="sr-only">Full Name</label>
+							<input type="text" class="form-control" id="reg_fullname" name="reg_fullname" placeholder="이름" required>
+						</div>
+
+						<!-- 전화번호는 숫자만 되도록 만들기 -->
+						<div class="form-group">
+							<label for="reg_tel" class="sr-only">Phone number</label>
+							<input type="tel" class="form-control" id="reg_tel" name="reg_tel" placeholder="전화번호" required>
+						</div>
+						<div class="form-group">
+							<label for="reg_email" class="sr-only">Email</label>
+							<input type="email" class="form-control" id="reg_email" name="reg_email" placeholder="메일 주소" required>
+						</div>
+						<!-- 꼭 필요한가? -->
+						<div class="form-group">
+							<label for="reg_address" class="sr-only">Address</label>
+							<input type="text" class="form-control" id="reg_address" name="reg_address" placeholder="address">
+						</div>
+
+						<div class="form-group login-group-checkbox">
+							<input type="radio" class="" name="reg_gender" id="남">
+							<label for="male">male</label>
+
+							<input type="radio" class="" name="reg_gender" id="여">
+							<label for="female">female</label>
+						</div>
+
+						<div class="form-group login-group-checkbox">
+							<input type="checkbox" class="" id="reg_agree" name="reg_agree" required>
+							<label for="reg_agree"><a href="/agreement">이용약관</a>에 동의합니다.</label>
+						</div>
+					</div>
+					<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
+				</div>
+				<div class="etc-login-form">
+					<p>already have an account? <a href="/login">login here</a></p>
+				</div>
+			</form>
+		</div>
+		<!-- end:Main Form -->
+	</div>
+</div>

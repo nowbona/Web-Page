@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="stylesheet" href="/stylesheets/bootstrap.css">
+	<link rel="stylesheet" href="/stylesheets/modern-business.css">
+	<link rel="stylesheet" href="/stylesheets/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<title> 야한란 </title>
+</head>
+<body style="min-height:100% !important">
+<!-- navbar for mob -->
+	<nav class="navbar navbar-inverse navbar-fixed-top mob_gnb_wrap" style="background: white; border-bottom:2px solid #878787"role="navigation">
+		<div class="mob-invisible" style="height:35px; margin-right: 20px">
+			<ul class="nav navbar-nav navbar-right list-social-icons" style="height:35px">
+				<li>
+					<!-- 로그인 안되었을때 -->
+					<table class="Beforelogin" style="margin: 10px 15px 0 0">
+					  <tr>
+					    <!-- <td style="padding-right:17px">
+					    	<a href="/login" style="color: black; font-size:12px">로그인</a>
+					    </td>
+					    <td style="padding-left:15px; padding-right:17px">
+					    	<a href="/agreement" style="color: black; font-size:12px">회원가입</a>
+					    </td> -->
+							<td style="padding-left:15px;  padding-right:17px">
+								<a href="/yahanran/contact" style="color: black; font-size:12px">고객 센터</a>
+							</td>
+					  </tr>
+					</table>
+					<!-- 로그인 이후 -->
+					<!-- <table class="Afterlogin" style="margin: 10px 15px 0 0">
+					  <tr>
+					    <td style="padding-right:17px">
+					    	<a href="/logout" style="color: black; font-size:12px">로그아웃</a>
+					    </td>
+					    <td style="padding-left:15px; padding-right:17px">
+					    	<a href="/myinfor" style="color: black; font-size:12px">마이 페이지</a>
+					    </td>
+							<td style="padding-left:15px;  padding-right:17px">
+					    	<a href="/myorder" style="color: black; font-size:12px">주문확인</a>
+					    </td>
+							<td style="padding-left:15px;  padding-right:17px">
+								<a href="/yahanran/contact" style="color: black; font-size:12px">고객 센터</a>
+							</td>
+					  </tr>
+					</table> -->
+				</li>
+			</ul>
+			<!-- 페북과 인스타 맨 아래로 보내기 -->
+
+		</div>
+		<hr class="mob-invisible"style="margin:0px; border-top:2px solid #cccccc">
+		<div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" style="padding-top:4px" href="/">
+					<img src="/images/yahanran_logo.gif">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right nav-tabs" style="text-align: right; margin-bottom:0px">
+					<li class="mob-invisible" style="margin-top:50px">
+						<a href="/yahanran/index" style="color: black">  HOME  </a>
+					</li>
+					<li class="pc-invisible">
+						<a href="/yahanran/index" style="color: black">  HOME  </a>
+					</li>
+					<a class="mob-invisible" href="/yahanran/about">
+						<img src="/images/order.png" style="margin:13px 30px 0px 15px; height:65px" alt="">
+					</a>
+					<li class="pc-invisible">
+						<a href="/yahanran/about" style="color: black">바로주문</a>
+					</li>
+					<li class="pc-invisible">
+						<a href="/yahanran/contact" style="color: black">고객 센터</a>
+					</li>
+					<!-- 로그인 안되었을때 -->
+					<!-- <li class="Beforelogin pc-invisible" style="border-top:2px solid #878787; margin-top:6px">
+						<table style="width: 100%; text-align:center">
+							<tbody>
+								<tr>
+									<td style="border-right:2px solid #878787; width: 50%; padding:10px 0 10px 0">
+										<a href="/login" style="color: black; text-decoration: none">로그인</a>
+									</td>
+									<td style="width: 50%; padding:10px 0 10px 0;">
+										<a href="/join" style="color: black; text-decoration: none">회원가입</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</li> -->
+					<!-- 로그인 이후 -->
+					<!-- <li class="Beforelogin pc-invisible" style="border-top:2px solid #878787; margin-top:6px">
+						<table style="width: 100%; text-align:center">
+							<tbody>
+								<tr>
+									<td style="border-right:2px solid #878787; width: 50%; padding:10px 0 10px 0">
+										<a href="/myinfor" style="color: black; text-decoration: none">마이 페이지</a>
+									</td>
+									<td style="width: 50%; padding:10px 0 10px 0;">
+										<a href="/myorder" style="color: black; text-decoration: none">주문확인</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</li> -->
+
+					<!-- 없앨까?? -->
+					<li id="mob-facebook">
+						<a href="https://www.facebook.com/yahanran/" style="color: black" target="_blank">facebook</a>
+					</li>
+					<li id="mob-instagram">
+						<a href="https://www.instagram.com/yahanran/" style="color: black" target="_blank">instagram</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<%- body -%>
+	<footer class="mob-invisible" style="background-color:#d8d8d8">
+			<div class="container" style="text-align: left">
+				<img src="/images/footer1.png">
+				<table style="float:right">
+					<tr>
+						<td>
+							<a href="https://www.facebook.com/yahanran/" target="_blank" style="margin:5px; margin:0"><img src="/images/footer_facebook.png" alt=""></a>
+							<a href="https://www.instagram.com/yahanran/" target="_blank" style="margin:5px; margin:0"><img src="/images/footer_insta.png" alt=""></a>
+						</td>
+					</tr>
+					<tr>
+						<td><img style="float:left; height:13px"src="/images/footer2.png"></td>
+					</tr>
+				</table>
+			</div>
+	</footer>
+	<footer class="pc-invisible" style="background-color:#d8d8d8">
+		<div class="container" style="text-align: left">
+			<img src="/images/footer_m.png" alt="">
+		</div>
+	</footer>
+	<script src="/javascripts/jquery.js"></script>
+	<script src="/javascripts/bootstrap.js"></script>
+
+</body>
+</html>

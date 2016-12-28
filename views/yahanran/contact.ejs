@@ -1,0 +1,110 @@
+<% layout ('layout') -%>
+
+<div class="container main-body orderpage-body">
+	<div class="row">
+		<h1 class="col-md-12 contact-main" style="font-weight:bold"> 고객센터
+			<small>제안, 칭찬, 불만 모두 환영입니다! </small>
+		</h1>
+		<div class="col-md-8 col-xs-12" style="margin-bottom: 20px">
+			<div style="margin-top:20px">
+			  <div class="FAQ">자주묻는 질문 FAQ</div>
+					<table class="FAQtable" style="margin-top:10px">
+						<tr type="button" class="Question"id="Q1">
+							<th>Q1</th>
+							<td>질문<i class="fa fa-chevron-down" aria-hidden="true" style="float:right"></i></td>
+						</tr>
+						<tr class="Answer" id="A1">
+							<th>A</th>
+							<td>답변</td>
+						</tr>
+						<tr type="button" class="Question" id="Q2">
+							<th>Q2</th>
+							<td>질문<i class="fa fa-chevron-down" aria-hidden="true" style="float:right"></i></td>
+						</tr>
+						<tr class="Answer" id="A2">
+							<th>A</th>
+							<td>답변</td>
+						</tr>
+						<tr type="button" class="Question" id="Q3">
+							<th>Q3</th>
+							<td>질문<i class="fa fa-chevron-down" aria-hidden="true" style="float:right"></i></td>
+						</tr>
+						<tr class="Answer" id="A3">
+							<th>A</th>
+							<td>답변</td>
+						</tr>
+						<tr type="button" class="Question" id="Q4">
+							<th>Q4</th>
+							<td>질문<i class="fa fa-chevron-down" aria-hidden="true" style="float:right"></i></td>
+						</tr>
+						<tr class="Answer" id="A4">
+							<th>A</th>
+							<td>답변</td>
+						</tr>
+						<tr type="button" class="Question" id="Q5">
+							<th>Q5</th>
+							<td>질문<i class="fa fa-chevron-down" aria-hidden="true" style="float:right"></i></td>
+						</tr>
+						<tr class="Answer" id="A5">
+							<th>A</th>
+							<td>답변</td>
+						</tr>
+					</table>
+
+					<script>
+							$(document).ready(function(){
+									$(".Answer").hide();
+
+									$("#Q1").click(function(){
+											$("#A1").show();
+									});
+									$("#Q2").click(function(){
+											$("#A2").show();
+									});
+							});
+					</script>
+<!-- 답변이 열려있을때 버튼 누르면 다시 닫아지게 하는법 -->
+
+
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-12">
+			<table class="contact-table" style="border:1px solid #FFCB04; width:100%">
+				<thead>
+					<th colspan="2" style="text-align:center; background-color:#FFCB04">
+						<span style="font-size:25px"><img src="/images/headphone.png" alt=""> 1 : 1 문의하기<br></span>
+						<span style="font-size:18px">연중무휴 언제나 답변해 드립니다</span>
+					</th>
+				</thead>
+				<tbody>
+					<tr>
+						<th><img src="/images/kakao.png" alt=""></th>
+						<td>
+							<span>카카오톡 플러스 친구<br class="mob-invisible"></span>
+							<span class="direct">@야한란</span>
+						</td>
+					</tr>
+					<tr>
+						<th><img src="/images/ff.png" alt=""></th>
+						<td>
+							<span>페이스북 메시지<br class="mob-invisible"></span>
+							<span class="direct">'야한란' 페이지</span>
+						</td>
+					</tr>
+					<tr>
+						<th><img src="/images/gmail.png" alt=""></th>
+						<td>
+							<span>메일문의<br class="mob-invisible"></span>
+							<span class="direct" id="bona-gmail">nowbona.com@gmail.com</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+<script src="/javascripts/jqBootstrapValidation.js"></script>
+<script src="/javascripts/contact_me.js"></script>
